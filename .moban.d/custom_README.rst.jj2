@@ -1,7 +1,7 @@
 {%extends 'README.rst.jj2' %}
 
 {%block description%}
-**{{name}}** is a tiny wrapper library to write data in xlsx and xlsm fromat using xlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
+**{{name}}** is a tiny wrapper library to write data in xlsx and xlsm fromat using libxlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
 {%endblock%}
 
 

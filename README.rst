@@ -33,7 +33,7 @@ pyexcel-libxlsxw - Let you focus on data, instead of xlsx format
 .. image:: https://readthedocs.org/projects/pyexcel-libxlsxw/badge/?version=latest
    :target: http://pyexcel-libxlsxw.readthedocs.org/en/latest/
 
-**pyexcel-libxlsxw** is a tiny wrapper library to write data in xlsx and xlsm fromat using xlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
+**pyexcel-libxlsxw** is a tiny wrapper library to write data in xlsx and xlsm fromat using libxlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
 
 Support the project
 ================================================================================
