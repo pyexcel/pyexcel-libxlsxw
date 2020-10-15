@@ -9,7 +9,7 @@ from textwrap import dedent
 from unittest import TestCase
 
 import pyexcel as pe
-from pyexcel_xlsxw import save_data
+from pyexcel_libxlsxw import save_data
 
 
 class TestBugFix(TestCase):
@@ -85,7 +85,7 @@ class TestBugFix(TestCase):
         tmp_file = "workbook_options.xlsx"
         data = {"Sheet 1": [[cell_content]]}
         save_data(
-            tmp_file, data, strings_to_formulas=False, library="pyexcel-xlsxw"
+            tmp_file, data, strings_to_formulas=False, library="pyexcel-libxlsxw"
         )
         sheet = pe.get_sheet(file_name=tmp_file)
         self.assertEqual(sheet[0][0], cell_content)

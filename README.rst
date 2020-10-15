@@ -1,5 +1,5 @@
 ================================================================================
-pyexcel-xlsxw - Let you focus on data, instead of xlsx format
+pyexcel-libxlsxw - Let you focus on data, instead of xlsx format
 ================================================================================
 
 .. image:: https://raw.githubusercontent.com/pyexcel/pyexcel.github.io/master/images/patreon.png
@@ -8,18 +8,18 @@ pyexcel-xlsxw - Let you focus on data, instead of xlsx format
 .. image:: https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg
    :target: https://awesome-python.com/#specific-formats-processing
 
-.. image:: https://travis-ci.org/pyexcel/pyexcel-xlsxw.svg?branch=master
-   :target: http://travis-ci.org/pyexcel/pyexcel-xlsxw
+.. image:: https://travis-ci.org/pyexcel/pyexcel-libxlsxw.svg?branch=master
+   :target: http://travis-ci.org/pyexcel/pyexcel-libxlsxw
 
-.. image:: https://codecov.io/gh/pyexcel/pyexcel-xlsxw/branch/master/graph/badge.svg
-   :target: https://codecov.io/gh/pyexcel/pyexcel-xlsxw
+.. image:: https://codecov.io/gh/pyexcel/pyexcel-libxlsxw/branch/master/graph/badge.svg
+   :target: https://codecov.io/gh/pyexcel/pyexcel-libxlsxw
 
-.. image:: https://badge.fury.io/py/pyexcel-xlsxw.svg
-   :target: https://pypi.org/project/pyexcel-xlsxw
+.. image:: https://badge.fury.io/py/pyexcel-libxlsxw.svg
+   :target: https://pypi.org/project/pyexcel-libxlsxw
 
 
-.. image:: https://pepy.tech/badge/pyexcel-xlsxw/month
-   :target: https://pepy.tech/project/pyexcel-xlsxw/month
+.. image:: https://pepy.tech/badge/pyexcel-libxlsxw/month
+   :target: https://pepy.tech/project/pyexcel-libxlsxw/month
 
 
 .. image:: https://img.shields.io/gitter/room/gitterHQ/gitter.svg
@@ -30,10 +30,10 @@ pyexcel-xlsxw - Let you focus on data, instead of xlsx format
 
 .. image:: https://img.shields.io/static/v1?label=coding%20style&message=black&color=black&style=flat-square
     :target: https://github.com/psf/black
-.. image:: https://readthedocs.org/projects/pyexcel-xlsxw/badge/?version=latest
-   :target: http://pyexcel-xlsxw.readthedocs.org/en/latest/
+.. image:: https://readthedocs.org/projects/pyexcel-libxlsxw/badge/?version=latest
+   :target: http://pyexcel-libxlsxw.readthedocs.org/en/latest/
 
-**pyexcel-xlsxw** is a tiny wrapper library to write data in xlsx and xlsm fromat using xlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
+**pyexcel-libxlsxw** is a tiny wrapper library to write data in xlsx and xlsm fromat using xlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
 
 Support the project
 ================================================================================
@@ -62,19 +62,19 @@ Installation
 ================================================================================
 
 
-You can install pyexcel-xlsxw via pip:
+You can install pyexcel-libxlsxw via pip:
 
 .. code-block:: bash
 
-    $ pip install pyexcel-xlsxw
+    $ pip install pyexcel-libxlsxw
 
 
 or clone it and install it:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/pyexcel/pyexcel-xlsxw.git
-    $ cd pyexcel-xlsxw
+    $ git clone https://github.com/pyexcel/pyexcel-libxlsxw.git
+    $ cd pyexcel-libxlsxw
     $ python setup.py install
 
 Usage
@@ -108,7 +108,7 @@ Here's the sample code to write a dictionary to an xlsx file:
 
 .. code-block:: python
 
-    >>> from pyexcel_xlsxw import save_data
+    >>> from pyexcel_libxlsxw import save_data
     >>> data = OrderedDict() # from collections import OrderedDict
     >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
     >>> data.update({"Sheet 2": [["row 1", "row 2", "row 3"]]})
@@ -134,7 +134,7 @@ Here's the sample code to write a dictionary to an xlsx file:
 
 .. code-block:: python
 
-    >>> from pyexcel_xlsxw import save_data
+    >>> from pyexcel_libxlsxw import save_data
     >>> data = OrderedDict()
     >>> data.update({"Sheet 1": [[1, 2, 3], [4, 5, 6]]})
     >>> data.update({"Sheet 2": [[7, 8, 9], [10, 11, 12]]})
@@ -227,8 +227,8 @@ Developer guide
 
 Development steps for code changes
 
-#. git clone https://github.com/pyexcel/pyexcel-xlsxw.git
-#. cd pyexcel-xlsxw
+#. git clone https://github.com/pyexcel/pyexcel-libxlsxw.git
+#. cd pyexcel-libxlsxw
 
 Upgrade your setup tools and pip. They are needed for development and testing only:
 

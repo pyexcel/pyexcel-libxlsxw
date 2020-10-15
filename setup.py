@@ -27,16 +27,16 @@ try:
 except (ValueError, UnicodeError, locale.Error):
     locale.setlocale(locale.LC_ALL, "en_US.UTF-8")
 
-NAME = "pyexcel-xlsxw"
+NAME = "pyexcel-libxlsxw"
 AUTHOR = "chfw"
-VERSION = "0.6.1"
+VERSION = "0.6.0"
 EMAIL = "info@pyexcel.org"
 LICENSE = "New BSD"
 DESCRIPTION = (
     "A wrapper library to write data in xlsx and xlsm format"
 )
-URL = "https://github.com/pyexcel/pyexcel-xlsxw"
-DOWNLOAD_URL = "%s/archive/0.6.1.tar.gz" % URL
+URL = "https://github.com/pyexcel/pyexcel-libxlsxw"
+DOWNLOAD_URL = "%s/archive/0.6.0.tar.gz" % URL
 FILES = ["README.rst", "CHANGELOG.rst"]
 KEYWORDS = [
     "python",
@@ -63,7 +63,7 @@ CLASSIFIERS = [
 PYTHON_REQUIRES = ">=3.6"
 
 INSTALL_REQUIRES = [
-    "XlsxWriter>=0.9.3",
+    "libxlsxwpy",
     "pyexcel-io>=0.6.2",
 ]
 SETUP_COMMANDS = {}
@@ -73,13 +73,14 @@ EXTRAS_REQUIRE = {
 }
 # You do not need to read beyond this line
 PUBLISH_COMMAND = "{0} setup.py sdist bdist_wheel upload -r pypi".format(sys.executable)
-GS_COMMAND = ("gs pyexcel-xlsxw v0.6.1 " +
-              "Find 0.6.1 in changelog for more details")
+HERE = os.path.abspath(os.path.dirname(__file__))
+
+GS_COMMAND = ("gs pyexcel-libxlsxw v0.6.0 " +
+              "Find 0.6.0 in changelog for more details")
 NO_GS_MESSAGE = ("Automatic github release is disabled. " +
                  "Please install gease to enable it.")
 UPLOAD_FAILED_MSG = (
     'Upload failed. please run "%s" yourself.' % PUBLISH_COMMAND)
-HERE = os.path.abspath(os.path.dirname(__file__))
 
 
 class PublishCommand(Command):
@@ -104,7 +105,7 @@ class PublishCommand(Command):
             self.status("Removing previous builds...")
             rmtree(os.path.join(HERE, "dist"))
             rmtree(os.path.join(HERE, "build"))
-            rmtree(os.path.join(HERE, "pyexcel_xlsxw.egg-info"))
+            rmtree(os.path.join(HERE, "pyexcel_libxlsxw.egg-info"))
         except OSError:
             pass
 
@@ -124,7 +125,6 @@ class PublishCommand(Command):
 SETUP_COMMANDS.update({
     "publish": PublishCommand
 })
-
 
 def has_gease():
     """

@@ -21,13 +21,13 @@ DESCRIPTION = (
 
 # -- Project information -----------------------------------------------------
 
-project = 'pyexcel-xlsxw'
+project = 'pyexcel-libxlsxw'
 copyright = '2015-2020 Onni Software Ltd.'
 author = 'chfw'
 # The short X.Y version
-version = '0.6.1'
+version = '0.6.0'
 # The full version, including alpha/beta/rc tags
-release = '0.6.1'
+release = '0.6.0'
 
 # -- General configuration ---------------------------------------------------
 
@@ -74,9 +74,9 @@ html_theme = 'default'
 
 # TODO: DESCRIPTION not configurable upstream
 texinfo_documents = [
-    ('index', 'pyexcel-xlsxw',
-     'pyexcel-xlsxw Documentation',
-     'Onni Software Ltd.', 'pyexcel-xlsxw',
+    ('index', 'pyexcel-libxlsxw',
+     'pyexcel-libxlsxw Documentation',
+     'Onni Software Ltd.', 'pyexcel-libxlsxw',
      DESCRIPTION,
      'Miscellaneous'),
 ]

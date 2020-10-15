@@ -1,2 +1,2 @@
-XlsxWriter>=0.9.3
+libxlsxwpy
 pyexcel-io>=0.6.2

@@ -1,8 +1,6 @@
 
 
-1 contributors
-================================================================================
+No contributors yet
+=======================
 
-In alphabetical order:
-
-* `Bryan Deeney <https://github.com/bdeeney>`_
+* Your github link will be listed here after your PR is merged

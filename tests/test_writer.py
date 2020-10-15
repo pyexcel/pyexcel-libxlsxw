@@ -2,7 +2,9 @@ import os
 
 from base import PyexcelWriterBase, PyexcelHatWriterBase
 from pyexcel_xls import get_data
-from pyexcel_xlsxw import xlsxw as xlsx
+from pyexcel_libxlsxw import xlsxw as xlsx
+
+from nose.tools import eq_
 
 
 class TestNativeXLWriter:
@@ -19,7 +21,7 @@ class TestNativeXLWriter:
         content = get_data(self.testfile)
         for key in content.keys():
             content[key] = list(content[key])
-        assert content == self.content
+        eq_(content, self.content)
 
     def tearDown(self):
         if os.path.exists(self.testfile):
