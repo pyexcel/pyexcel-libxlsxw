@@ -33,7 +33,7 @@ VERSION = "0.6.0"
 EMAIL = "info@pyexcel.org"
 LICENSE = "New BSD"
 DESCRIPTION = (
-    "A wrapper library to write data in xlsx and xlsm format"
+    "A wrapper library of libxlsxwpy to write data in xlsx and xlsm format"
 )
 URL = "https://github.com/pyexcel/pyexcel-libxlsxw"
 DOWNLOAD_URL = "%s/archive/0.6.0.tar.gz" % URL

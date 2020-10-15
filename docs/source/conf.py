@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 DESCRIPTION = (
-    'A wrapper library to write data in xlsx and xlsm format' +
+    'A wrapper library of libxlsxwpy to write data in xlsx and xlsm format' +
     ''
 )
 # Configuration file for the Sphinx documentation builder.
