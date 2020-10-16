@@ -33,7 +33,8 @@ pyexcel-libxlsxw - Let you focus on data, instead of xlsx format
 .. image:: https://readthedocs.org/projects/pyexcel-libxlsxw/badge/?version=latest
    :target: http://pyexcel-libxlsxw.readthedocs.org/en/latest/
 
-**pyexcel-libxlsxw** is a tiny wrapper library to write data in xlsx and xlsm fromat using libxlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
+**pyexcel-libxlsxw** is a tiny wrapper library to write data in xlsx and xlsm format
+using libxlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
 
 Support the project
 ================================================================================
@@ -198,23 +199,6 @@ Here is the sample code:
     >>> sheet.save_as("another_file.xlsx")
 
 
-Writing to a StringIO instance
-********************************************************************************
-
-You need to pass a StringIO instance to Writer:
-
-.. code-block:: python
-
-    >>> data = [
-    ...     [1, 2, 3],
-    ...     [4, 5, 6]
-    ... ]
-    >>> io = StringIO()
-    >>> sheet = pe.Sheet(data)
-    >>> io = sheet.save_to_memory("xlsx", io)
-    >>> # then do something with io
-    >>> # In reality, you might give it to your http response
-    >>> # object for downloading
 
 
 License

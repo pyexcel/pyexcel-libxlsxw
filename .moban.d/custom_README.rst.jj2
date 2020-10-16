@@ -1,7 +1,8 @@
 {%extends 'README.rst.jj2' %}
 
 {%block description%}
-**{{name}}** is a tiny wrapper library to write data in xlsx and xlsm fromat using libxlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
+**{{name}}** is a tiny wrapper library to write data in xlsx and xlsm format
+using libxlsxwriter. You are likely to use it with `pyexcel <https://github.com/pyexcel/pyexcel>`__.
 {%endblock%}
 
 
@@ -61,3 +62,6 @@ Let's assume we have data as the following.
 
 {%block read_from_memory_via_pyexcel %}
 {%endblock%}
+
+{% block pyexcel_write_to_memory%}
+{% endblock %}
