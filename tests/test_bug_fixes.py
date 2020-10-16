@@ -11,8 +11,13 @@ from unittest import TestCase
 import pyexcel as pe
 from pyexcel_libxlsxw import save_data
 
+from nose.tools import eq_
+
 
 class TestBugFix(TestCase):
+    def setUp(self):
+        self.maxDiff = None
+
     def test_pyexcel_issue_5(self):
         """pyexcel issue #5
 
@@ -21,10 +26,10 @@ class TestBugFix(TestCase):
         s = pe.load(
             os.path.join("tests", "test-fixtures", "test-date-format.xls")
         )
-        s.save_as("issue5.xlsx")
+        s.save_as("issue5.xlsx", library="pyexcel-libxlsxw")
         s2 = pe.load("issue5.xlsx")
-        assert s[0, 0] == datetime.datetime(2015, 11, 11, 11, 12, 0)
-        assert s2[0, 0] == datetime.datetime(2015, 11, 11, 11, 12, 0)
+        eq_(s[0, 0], datetime.datetime(2015, 11, 11, 11, 12, 0))
+        eq_(s2[0, 0], datetime.datetime(2015, 11, 11, 11, 12, 0))
 
     def test_pyexcel_issue_8_with_physical_file(self):
         """pyexcel issue #8
@@ -33,7 +38,7 @@ class TestBugFix(TestCase):
         """
         tmp_file = "issue_8_save_as.xlsx"
         s = pe.load(os.path.join("tests", "test-fixtures", "test8.xlsx"))
-        s.save_as(tmp_file)
+        s.save_as(tmp_file, library="pyexcel-libxlsxw")
         s2 = pe.load(tmp_file)
         self.assertEqual(str(s), str(s2))
         content = dedent(
@@ -58,7 +63,7 @@ class TestBugFix(TestCase):
         tmp_file = "issue_8_save_as.xlsx"
         f = open(os.path.join("tests", "test-fixtures", "test8.xlsx"), "rb")
         s = pe.load_from_memory("xlsx", f.read())
-        s.save_as(tmp_file)
+        s.save_as(tmp_file, library="pyexcel-libxlsxw")
         s2 = pe.load(tmp_file)
         self.assertEqual(str(s), str(s2))
         content = dedent(

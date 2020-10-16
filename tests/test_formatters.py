@@ -14,7 +14,11 @@ class TestDateFormat:
                 datetime.datetime(2014, 12, 25, 11, 11, 11),
             ]
         ]
-        pe.save_as(dest_file_name=excel_filename, array=data)
+        pe.save_as(
+            dest_file_name=excel_filename,
+            array=data,
+            library="pyexcel-libxlsxw",
+        )
         r = pe.get_sheet(file_name=excel_filename, library="pyexcel-xls")
         assert isinstance(r[0, 0], datetime.date) is True
         assert r[0, 0].strftime("%d/%m/%y") == "25/12/14"

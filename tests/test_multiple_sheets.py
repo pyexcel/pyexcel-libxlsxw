@@ -33,7 +33,11 @@ class TestAddBooks:
         3,3,3,3
         """
         self.rows = 3
-        pyexcel.save_book_as(bookdict=self.content, dest_file_name=file)
+        pyexcel.save_book_as(
+            bookdict=self.content,
+            dest_file_name=file,
+            library="pyexcel-libxlsxw",
+        )
 
     def setUp(self):
         self.testfile = "multiple3.xlsx"
@@ -217,17 +221,6 @@ class TestAddBooks:
             os.unlink(self.testfile)
         if os.path.exists(self.testfile2):
             os.unlink(self.testfile2)
-
-
-class TestMultiSheetReader:
-    def setUp(self):
-        self.testfile = "file_with_an_empty_sheet.xlsx"
-
-    def test_reader_with_correct_sheets(self):
-        r = pyexcel.BookReader(
-            os.path.join("tests", "fixtures", self.testfile)
-        )
-        assert r.number_of_sheets() == 3
 
 
 def _produce_ordered_dict():

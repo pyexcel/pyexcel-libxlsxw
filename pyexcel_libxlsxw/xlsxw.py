@@ -7,6 +7,8 @@
     :copyright: (c) 2016-2020 by Onni Software Ltd & its contributors
     :license: New BSD License
 """
+from datetime import date, time, datetime
+
 from libxlsxwpy import Book
 from pyexcel_io.plugin_api import IWriter, ISheetWriter
 
@@ -29,6 +31,39 @@ class XLSXSheetWriter(ISheetWriter):
                 self.xlsx_sheet.write_number(self.current_row, index, cell)
             elif isinstance(cell, bool):
                 self.xlsx_sheet.write_boolean(self.current_row, index, cell)
+            elif isinstance(cell, datetime):
+                self.xlsx_sheet.write_datetime(
+                    self.current_row,
+                    index,
+                    cell.year,
+                    cell.month,
+                    cell.day,
+                    cell.hour,
+                    cell.minute,
+                    cell.second,
+                )
+            elif isinstance(cell, date):
+                self.xlsx_sheet.write_datetime(
+                    self.current_row,
+                    index,
+                    cell.year,
+                    cell.month,
+                    cell.day,
+                    0,
+                    0,
+                    0,
+                )
+            elif isinstance(cell, time):
+                self.xlsx_sheet.write_datetime(
+                    self.current_row,
+                    index,
+                    0,
+                    0,
+                    0,
+                    cell.hour,
+                    cell.minute,
+                    cell.second,
+                )
             else:
                 self.xlsx_sheet.write_string(
                     self.current_row, index, str(cell)

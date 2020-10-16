@@ -11,7 +11,9 @@ def create_sample_file1(file):
     table.append(data[:4])
     table.append(data[4:8])
     table.append(data[8:12])
-    pyexcel.save_as(array=table, dest_file_name=file)
+    pyexcel.save_as(
+        array=table, dest_file_name=file, library="pyexcel-libxlsxw"
+    )
 
 
 class PyexcelHatWriterBase:
@@ -26,7 +28,11 @@ class PyexcelHatWriterBase:
     }
 
     def test_series_table(self):
-        pyexcel.save_as(adict=self.content, dest_file_name=self.testfile)
+        pyexcel.save_as(
+            adict=self.content,
+            dest_file_name=self.testfile,
+            library="pyexcel-libxlsxw",
+        )
         r = pyexcel.get_sheet(file_name=self.testfile, name_columns_by_row=0)
         eq_(r.dict, self.content)
 
@@ -47,7 +53,9 @@ class PyexcelWriterBase:
     ]
 
     def _create_a_file(self, file):
-        pyexcel.save_as(dest_file_name=file, array=self.content)
+        pyexcel.save_as(
+            dest_file_name=file, array=self.content, library="pyexcel-libxlsxw"
+        )
 
     def test_write_array(self):
         self._create_a_file(self.testfile)
@@ -58,7 +66,11 @@ class PyexcelWriterBase:
 
 class PyexcelMultipleSheetBase:
     def _write_test_file(self, filename):
-        pyexcel.save_book_as(bookdict=self.content, dest_file_name=filename)
+        pyexcel.save_book_as(
+            bookdict=self.content,
+            dest_file_name=filename,
+            library="pyexcel-libxlsxw",
+        )
 
     def _clean_up(self):
         if os.path.exists(self.testfile2):
